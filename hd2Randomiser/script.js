@@ -59,8 +59,8 @@ const stratagems = [ // updated Nov 7, 2024
     "A/M-23 EMS Mortar Sentry",
 ];
 
-// Helldivers Mobilise automatically in the arrays
-// these will be used 
+// Helldivers Mobilise Warbonds automatically in the arrays
+// these arrays will be used to pull from the pool.
 let primary = [
     "AR-23 Liberator",
     "SG-8 Punisher",
