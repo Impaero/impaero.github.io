@@ -65,23 +65,18 @@ body {
     margin-top: 30px;
 }
 
-#stratagems-choice > p, #primary-choice > p 
-#secondary-choice > p, #grenade-choice > p {
-    padding-top: 10px;
-}
-
 div {
     text-align: center;
 }
 
 h1, h2, h3 {
     font-family: "Swiss721";
+    text-decoration: underline;
     padding: 5px;
 }
 
 h1 {
     font-size: 40px;
-    text-decoration: underline;
 }
 
 h2 {
@@ -95,6 +90,7 @@ h3 {
 
 p {
     font-size: 18px;
+    padding: 10px 0px;
 }
 
 br {
