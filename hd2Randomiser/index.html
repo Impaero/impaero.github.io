@@ -46,12 +46,20 @@
             <input type="checkbox" id="truth-enforcers" value="on">
             <label for="truth-enforcers"><span>Truth Enforcers</span></label><br>
             
-            <input type="button" id="randomise" value="Randomise!" onclick="randomise()">
+            <input type="button" id="randomise" value="Randomise all!" onclick="randomiseAll()">
         </div>
         <div class="stratagems">
             <h3>Stratagems:</h3>
             <div id="stratagems-choice">
                 <p>None chosen yet</p>
+            </div>
+            <div id="specific-stratagems">
+                <p>
+                    This button down here will allow you to randomise a specific one out of the four.<br style="margin-bottom:0px;">
+                    <span style="font-size:15px">Input 5 for a complete overhaul.</span>
+                </p>
+                <input type="button" id="randomise-stratagems" value="Randomise this stratagem!" onclick="specificStrat()">
+                <input type="number" id="stratagem-no" min="1" max="5">
             </div>
         </div>
         <div class="primary">

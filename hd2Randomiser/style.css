@@ -27,6 +27,7 @@ body {
 
 .container {
     background-color:#353333;
+    width: 750px;
 }
 
 .header p {
@@ -43,7 +44,22 @@ body {
     width: 300px;
 }
 
-#stratagems-choice > p {
+#randomise-stratagems {
+    padding: 5px;
+}
+
+#stratagem-no {
+    padding: 5px;
+}
+
+#specific-stratagems > p {
+    padding-bottom: 10px;
+    font-style: italic; 
+    margin-top: 30px;
+}
+
+#stratagems-choice > p, #primary-choice > p 
+#secondary-choice > p, #grenade-choice > p {
     padding-top: 10px;
 }
 

@@ -4,6 +4,11 @@ let primaryChoice = document.querySelector("#primary-choice");
 let secondaryChoice = document.querySelector("#secondary-choice");
 let grenadeChoice = document.querySelector("#grenade-choice");
 
+// Initialise doc selector for specific randomisation.
+let specificStratagems = document.querySelector("#specific-stratagems");
+let stratagemNo = document.querySelector("#stratagem-no");
+specificStratagems.style.display = 'none';
+
 // Initialise checkboxes
 let superCitizenTick = document.querySelector("#super-citizen");
 let steeledVeteransTick = document.querySelector("#steeled-veterans");
@@ -114,6 +119,7 @@ let grenade = [
 
 // initialise randomised stratagem set.
 let randStratagems = new Set([]);
+let randStratArray = [];
 
 // initialise string for text content.
 let stratagemText = "";
@@ -204,21 +210,78 @@ const truthEnforcers = [
     "PLAS-15 Loyalist"
 ];
 
-function randomise() {
+function randomiseAll() {
     console.log("randomising...");
+    randomiseStratagems();
+
+    // reveal specific stratagem buttons.
+    if (specificStratagems.style.display == 'none') {
+        specificStratagems.style.display = 'block';
+    }
+
+    // choose and print primary.
+    primaryText = "";
+    primaryText = `<p>${primary[Math.floor(Math.random() * primary.length)]}</p>`;
+    primaryChoice.innerHTML = primaryText;
+
+    // choose and print secondary.
+    secondaryText = "";
+    secondaryText = `<p>${secondary[Math.floor(Math.random() * secondary.length)]}</p>`;
+    secondaryChoice.innerHTML = secondaryText;
+
+    // choose and print secondary.
+    grenadeText = "";
+    grenadeText = `<p>${grenade[Math.floor(Math.random() * grenade.length)]}</p>`;
+    grenadeChoice.innerHTML = grenadeText;
+}
+
+function randomiseStratagems() {
     // if the randomise stratagems are still there, remove all stratagems
     if (randStratagems.size > 0) {
+        stratagemText = "";
         randStratagems.clear();
+        randStratArray = [];
     }
-    
+
     // puts randomised stratagems to an array.
     while (randStratagems.size != 4) {
         let randomised = stratagems[Math.floor(Math.random() * stratagems.length)];
         randStratagems.add(randomised);
     }
 
-    // print stratagems.
     for (let text of randStratagems) {
+        randStratArray.push(text);
+    }
+    // print stratagems.
+    printStratagems();
+}
+
+function specificStrat() {
+    if (stratagemNo.value != 5) {
+        let index = stratagemNo.value - 1;
+        let randomised = stratagems[Math.floor(Math.random() * stratagems.length)];
+        // if previous randomised is already in the set, randomise it once again.
+        while (randStratagems.has(randomised)) {
+            randomised = stratagems[Math.floor(Math.random() * stratagems.length)];
+        }
+        randStratArray[index] = randomised;
+        
+        // update set
+        randStratagems.clear();
+        for (let text of randStratArray) {
+            randStratagems.add(text);
+        }
+
+        printStratagems();
+    }
+    else {
+        randomiseStratagems();
+    }
+}
+
+function printStratagems() {
+    stratagemText = "";
+    for (let text of randStratArray) {
         stratagemText += `
         <p>${text}</p>
         `;
@@ -259,11 +322,43 @@ function steeledVeteransList() {
 }
 
 function cuttingEdgeList() {
-    console.log("Cutting Edge changed.");
+    if (cuttingEdgeTick.checked) {
+        console.log("adding Cutting Edge Warbond.");
+        for (i = 0; i < cuttingEdge[0].length; i++) {
+            primary.push(cuttingEdge[0][i]);
+        }
+        secondary.push(cuttingEdge[1]);
+        grenade.push(cuttingEdge[2]);
+    }
+    else {
+        console.log("removing Cutting Edge Warbond.");
+        let ceIndexPrim = primary.indexOf(cuttingEdge[0][0]);
+        primary.splice(ceIndexPrim, 3);
+        let ceIndexSec = secondary.indexOf(cuttingEdge[1]);
+        secondary.splice(ceIndexSec, 1);
+        let ceIndexGren = grenade.indexOf(cuttingEdge[2]);
+        grenade.splice(ceIndexGren, 1);
+    }
 }
 
 function democraticDetonationList() {
-    console.log("Democratic Detonation changed.");
+    if (democraticDetonationTick.checked) {
+        console.log("adding Democratic Detonation Warbond.");
+        for (i = 0; i < democraticDetonation[0].length; i++) {
+            primary.push(democraticDetonation[0][i]);
+        }
+        secondary.push(democraticDetonation[1]);
+        grenade.push(democraticDetonation[2]);
+    }
+    else {
+        console.log("removing Democratic Detonation Warbond.");
+        let ddIndexPrim = primary.indexOf(democraticDetonation[0][0]);
+        primary.splice(ddIndexPrim, 3);
+        let ddIndexSec = secondary.indexOf(democraticDetonation[1]);
+        secondary.splice(ddIndexSec, 1);
+        let ddIndexGren = grenade.indexOf(democraticDetonation[2]);
+        grenade.splice(ddIndexGren, 1);
+    }
 }
 
 function polarPatriotsList() {
