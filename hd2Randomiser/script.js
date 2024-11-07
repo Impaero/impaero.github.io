@@ -1,5 +1,32 @@
-let stratagemChoice = document.querySelector(".stratagems-choice");
+// Initialise div choice doc selectors
+let stratagemChoice = document.querySelector("#stratagems-choice");
+let primaryChoice = document.querySelector("#primary-choice");
+let secondaryChoice = document.querySelector("#secondary-choice");
+let grenadeChoice = document.querySelector("#grenade-choice");
 
+// Initialise checkboxes
+let superCitizenTick = document.querySelector("#super-citizen");
+let steeledVeteransTick = document.querySelector("#steeled-veterans");
+let cuttingEdgeTick = document.querySelector("#cutting-edge");
+let democraticDetonationTick = document.querySelector("#democratic-detonation");
+let polarPatriotsTick = document.querySelector("#polar-patriots");
+let viperCommandosTick = document.querySelector("#viper-commandos");
+let freedomsFlameTick = document.querySelector("#freedoms-flame");
+let chemicalAgentsTick = document.querySelector("#chemical-agents");
+let truthEnforcersTick = document.querySelector("#truth-enforcers");
+
+// Add event listeners to all of them.
+superCitizenTick.addEventListener('change', superCitizenList);
+steeledVeteransTick.addEventListener('change', steeledVeteransList);
+cuttingEdgeTick.addEventListener('change', cuttingEdgeList);
+democraticDetonationTick.addEventListener('change', democraticDetonationList);
+polarPatriotsTick.addEventListener('change', polarPatriotsList);
+viperCommandosTick.addEventListener('change', viperCommandosList);
+freedomsFlameTick.addEventListener('change', freedomsFlameList);
+chemicalAgentsTick.addEventListener('change', chemicalAgentsList);
+truthEnforcersTick.addEventListener('change', truthEnforcersList);
+
+// arrays.
 const stratagems = [ // updated Nov 7, 2024
     "Eagle Strafing Run",
     "Eagle Airstrike",
@@ -85,7 +112,16 @@ let grenade = [
     "G-3 Smoke"
 ];
 
-// For those who have Super Citizen
+// initialise randomised stratagem set.
+let randStratagems = new Set([]);
+
+// initialise string for text content.
+let stratagemText = "";
+let primaryText = "";
+let secondaryText = "";
+let grenadeText = "";
+
+// For those who have Super Citizen; Primary
 const superCitizen = "MP-98 Knight SMG";
 
 // Steeled Veterans - Primary/Secondary/Grenade
@@ -167,3 +203,85 @@ const truthEnforcers = [
     ],
     "PLAS-15 Loyalist"
 ];
+
+function randomise() {
+    console.log("randomising...");
+    // if the randomise stratagems are still there, remove all stratagems
+    if (randStratagems.size > 0) {
+        randStratagems.clear();
+    }
+    
+    // puts randomised stratagems to an array.
+    while (randStratagems.size != 4) {
+        let randomised = stratagems[Math.floor(Math.random() * stratagems.length)];
+        randStratagems.add(randomised);
+    }
+
+    // print stratagems.
+    for (let text of randStratagems) {
+        stratagemText += `
+        <p>${text}</p>
+        `;
+    }
+    stratagemChoice.innerHTML = stratagemText;
+}
+
+function superCitizenList() {
+    if (superCitizenTick.checked) {
+        console.log("adding Super Citizen \"Warbond\".");
+        primary.push(superCitizen);
+    }
+    else {
+        console.log("removing Super Citizen \"Warbond\".");
+        let scIndex = primary.indexOf(superCitizen);
+        primary.splice(scIndex, 1);
+    }
+}
+
+function steeledVeteransList() {
+    if (steeledVeteransTick.checked) {
+        console.log("adding Steeled Veterans Warbond.");
+        for (i = 0; i < steeledVeterans[0].length; i++) {
+            primary.push(steeledVeterans[0][i]);
+        }
+        secondary.push(steeledVeterans[1]);
+        grenade.push(steeledVeterans[2]);
+    }
+    else {
+        console.log("removing Steeled Veterans Warbond.");
+        let svIndexPrim = primary.indexOf(steeledVeterans[0][0]);
+        primary.splice(svIndexPrim, 3);
+        let svIndexSec = secondary.indexOf(steeledVeterans[1]);
+        secondary.splice(svIndexSec, 1);
+        let svIndexGren = grenade.indexOf(steeledVeterans[2]);
+        grenade.splice(svIndexGren, 1);
+    }
+}
+
+function cuttingEdgeList() {
+    console.log("Cutting Edge changed.");
+}
+
+function democraticDetonationList() {
+    console.log("Democratic Detonation changed.");
+}
+
+function polarPatriotsList() {
+    console.log("Polar Patriots changed.");
+}
+
+function viperCommandosList() {
+    console.log("Viper Commandos changed.");
+}
+
+function freedomsFlameList() {
+
+}
+
+function chemicalAgentsList() {
+
+}
+
+function truthEnforcersList() {
+
+}
