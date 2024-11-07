@@ -4,10 +4,16 @@ let primaryChoice = document.querySelector("#primary-choice");
 let secondaryChoice = document.querySelector("#secondary-choice");
 let grenadeChoice = document.querySelector("#grenade-choice");
 
-// Initialise doc selector for specific randomisation.
+// Initialise doc selectors for specific randomisation.
 let specificStratagems = document.querySelector("#specific-stratagems");
 let stratagemNo = document.querySelector("#stratagem-no");
+let randomisePrimaryBtn = document.querySelector("#randomise-primary");
+let randomiseSecondaryBtn = document.querySelector("#randomise-secondary");
+let randomiseGrenadeBtn = document.querySelector("#randomise-grenade");
 specificStratagems.style.display = 'none';
+randomisePrimaryBtn.style.display = 'none';
+randomiseSecondaryBtn.style.display = 'none';
+randomiseGrenadeBtn.style.display = 'none';
 
 // Initialise checkboxes
 let superCitizenTick = document.querySelector("#super-citizen");
@@ -19,6 +25,17 @@ let viperCommandosTick = document.querySelector("#viper-commandos");
 let freedomsFlameTick = document.querySelector("#freedoms-flame");
 let chemicalAgentsTick = document.querySelector("#chemical-agents");
 let truthEnforcersTick = document.querySelector("#truth-enforcers");
+
+// Untick them all in case
+superCitizenTick.checked = false;
+steeledVeteransTick.checked = false;
+cuttingEdgeTick.checked = false;
+democraticDetonationTick.checked = false;
+polarPatriotsTick.checked = false;
+viperCommandosTick.checked = false;
+freedomsFlameTick.checked = false;
+chemicalAgentsTick.checked = false;
+truthEnforcersTick.checked = false;
 
 // Add event listeners to all of them.
 superCitizenTick.addEventListener('change', superCitizenList);
@@ -32,7 +49,7 @@ chemicalAgentsTick.addEventListener('change', chemicalAgentsList);
 truthEnforcersTick.addEventListener('change', truthEnforcersList);
 
 // arrays.
-const stratagems = [ // updated Nov 7, 2024
+let stratagems = [ // updated Nov 7, 2024
     "Eagle Strafing Run",
     "Eagle Airstrike",
     "Eagle Cluster Bomb",
@@ -127,6 +144,11 @@ let primaryText = "";
 let secondaryText = "";
 let grenadeText = "";
 
+// initialise current primary, secondary, and grenade
+let currPrimary = "";
+let currSecondary = "";
+let currGrenade = "";
+
 // For those who have Super Citizen; Primary
 const superCitizen = "MP-98 Knight SMG";
 
@@ -146,7 +168,6 @@ const cuttingEdge = [
     [
         "LAS-16 Sickle",
         "SG-8P Punisher Plasma",
-
     ],
     "LAS-7 Dagger",
     "G-23 Stun"
@@ -217,22 +238,19 @@ function randomiseAll() {
     // reveal specific stratagem buttons.
     if (specificStratagems.style.display == 'none') {
         specificStratagems.style.display = 'block';
+        randomisePrimaryBtn.style.display = 'block';
+        randomiseSecondaryBtn.style.display = 'block';
+        randomiseGrenadeBtn.style.display = 'block';
     }
 
     // choose and print primary.
-    primaryText = "";
-    primaryText = `<p>${primary[Math.floor(Math.random() * primary.length)]}</p>`;
-    primaryChoice.innerHTML = primaryText;
+    randomisePrimary();
 
     // choose and print secondary.
-    secondaryText = "";
-    secondaryText = `<p>${secondary[Math.floor(Math.random() * secondary.length)]}</p>`;
-    secondaryChoice.innerHTML = secondaryText;
+    randomiseSecondary();
 
-    // choose and print secondary.
-    grenadeText = "";
-    grenadeText = `<p>${grenade[Math.floor(Math.random() * grenade.length)]}</p>`;
-    grenadeChoice.innerHTML = grenadeText;
+    // choose and print grenade.
+    randomiseGrenade();
 }
 
 function randomiseStratagems() {
@@ -289,6 +307,81 @@ function printStratagems() {
     stratagemChoice.innerHTML = stratagemText;
 }
 
+function randomisePrimary() {
+    let randomised = primary[Math.floor(Math.random() * primary.length)];
+    while (randomised == currPrimary) {
+        randomised = primary[Math.floor(Math.random() * primary.length)];
+    }
+    currPrimary= randomised;
+    primaryText = "";
+    primaryText = `<p>${randomised}</p>`;
+    primaryChoice.innerHTML = primaryText;
+}
+
+function randomiseSecondary() {
+    let randomised = secondary[Math.floor(Math.random() * secondary.length)];
+    while (randomised == currSecondary) {
+        randomised = secondary[Math.floor(Math.random() * secondary.length)];
+    }
+    currSecondary = randomised;
+    secondaryText = "";
+    secondaryText = `<p>${randomised}</p>`;
+    secondaryChoice.innerHTML = secondaryText;
+}
+
+function randomiseGrenade() {
+    let randomised = grenade[Math.floor(Math.random() * grenade.length)];
+    while (randomised == currGrenade) {
+        randomised = grenade[Math.floor(Math.random() * grenade.length)];
+    }
+    currGrenade = randomised;
+    grenadeText = "";
+    grenadeText = `<p>${randomised}</p>`;
+    grenadeChoice.innerHTML = grenadeText;
+}
+
+// tick or untick all
+function tickAll() {
+    superCitizenTick.checked = true;
+    steeledVeteransTick.checked = true;
+    cuttingEdgeTick.checked = true;
+    democraticDetonationTick.checked = true;
+    polarPatriotsTick.checked = true;
+    viperCommandosTick.checked = true;
+    freedomsFlameTick.checked = true;
+    chemicalAgentsTick.checked = true;
+    truthEnforcersTick.checked = true;
+    superCitizenList();
+    steeledVeteransList();
+    cuttingEdgeList();
+    democraticDetonationList();
+    polarPatriotsList();
+    viperCommandosList();
+    freedomsFlameList();
+    chemicalAgentsList();
+    truthEnforcersList();
+}
+function untickAll() {
+    superCitizenTick.checked = false;
+    steeledVeteransTick.checked = false;
+    cuttingEdgeTick.checked = false;
+    democraticDetonationTick.checked = false;
+    polarPatriotsTick.checked = false;
+    viperCommandosTick.checked = false;
+    freedomsFlameTick.checked = false;
+    chemicalAgentsTick.checked = false;
+    truthEnforcersTick.checked = false;
+    superCitizenList();
+    steeledVeteransList();
+    cuttingEdgeList();
+    democraticDetonationList();
+    polarPatriotsList();
+    viperCommandosList();
+    freedomsFlameList();
+    chemicalAgentsList();
+    truthEnforcersList();
+}
+
 function superCitizenList() {
     if (superCitizenTick.checked) {
         console.log("adding Super Citizen \"Warbond\".");
@@ -296,8 +389,8 @@ function superCitizenList() {
     }
     else {
         console.log("removing Super Citizen \"Warbond\".");
-        let scIndex = primary.indexOf(superCitizen);
-        primary.splice(scIndex, 1);
+        let index = primary.indexOf(superCitizen);
+        primary.splice(index, 1);
     }
 }
 
@@ -312,12 +405,12 @@ function steeledVeteransList() {
     }
     else {
         console.log("removing Steeled Veterans Warbond.");
-        let svIndexPrim = primary.indexOf(steeledVeterans[0][0]);
-        primary.splice(svIndexPrim, 3);
-        let svIndexSec = secondary.indexOf(steeledVeterans[1]);
-        secondary.splice(svIndexSec, 1);
-        let svIndexGren = grenade.indexOf(steeledVeterans[2]);
-        grenade.splice(svIndexGren, 1);
+        let indexPrim = primary.indexOf(steeledVeterans[0][0]);
+        primary.splice(indexPrim, 3);
+        let indexSec = secondary.indexOf(steeledVeterans[1]);
+        secondary.splice(indexSec, 1);
+        let indexGren = grenade.indexOf(steeledVeterans[2]);
+        grenade.splice(indexGren, 1);
     }
 }
 
@@ -332,12 +425,12 @@ function cuttingEdgeList() {
     }
     else {
         console.log("removing Cutting Edge Warbond.");
-        let ceIndexPrim = primary.indexOf(cuttingEdge[0][0]);
-        primary.splice(ceIndexPrim, 3);
-        let ceIndexSec = secondary.indexOf(cuttingEdge[1]);
-        secondary.splice(ceIndexSec, 1);
-        let ceIndexGren = grenade.indexOf(cuttingEdge[2]);
-        grenade.splice(ceIndexGren, 1);
+        let indexPrim = primary.indexOf(cuttingEdge[0][0]);
+        primary.splice(indexPrim, 2);
+        let indexSec = secondary.indexOf(cuttingEdge[1]);
+        secondary.splice(indexSec, 1);
+        let indexGren = grenade.indexOf(cuttingEdge[2]);
+        grenade.splice(indexGren, 1);
     }
 }
 
@@ -352,31 +445,103 @@ function democraticDetonationList() {
     }
     else {
         console.log("removing Democratic Detonation Warbond.");
-        let ddIndexPrim = primary.indexOf(democraticDetonation[0][0]);
-        primary.splice(ddIndexPrim, 3);
-        let ddIndexSec = secondary.indexOf(democraticDetonation[1]);
-        secondary.splice(ddIndexSec, 1);
-        let ddIndexGren = grenade.indexOf(democraticDetonation[2]);
-        grenade.splice(ddIndexGren, 1);
+        let indexPrim = primary.indexOf(democraticDetonation[0][0]);
+        primary.splice(indexPrim, 3);
+        let indexSec = secondary.indexOf(democraticDetonation[1]);
+        secondary.splice(indexSec, 1);
+        let indexGren = grenade.indexOf(democraticDetonation[2]);
+        grenade.splice(indexGren, 1);
     }
 }
 
 function polarPatriotsList() {
-    console.log("Polar Patriots changed.");
+    if (polarPatriotsTick.checked) {
+        console.log("adding Polar Patriots Warbond.");
+        for (i = 0; i < polarPatriots[0].length; i++) {
+            primary.push(polarPatriots[0][i]);
+        }
+        secondary.push(polarPatriots[1]);
+        grenade.push(polarPatriots[2]);
+    }
+    else {
+        console.log("removing Polar Patriots Warbond.");
+        let indexPrim = primary.indexOf(polarPatriots[0][0]);
+        primary.splice(indexPrim, 3);
+        let indexSec = secondary.indexOf(polarPatriots[1]);
+        secondary.splice(indexSec, 1);
+        let indexGren = grenade.indexOf(polarPatriots[2]);
+        grenade.splice(indexGren, 1);
+    }
 }
 
 function viperCommandosList() {
-    console.log("Viper Commandos changed.");
+    if (viperCommandosTick.checked) {
+        console.log("adding Viper Commandos Warbond.");
+        primary.push(viperCommandos[0]);
+        secondary.push(viperCommandos[1]);
+        grenade.push(viperCommandos[2]);
+    }
+    else {
+        console.log("removing Viper Commandos Warbond.");
+        let indexPrim = primary.indexOf(viperCommandos[0][0]);
+        primary.splice(indexPrim, 1);
+        let indexSec = secondary.indexOf(viperCommandos[1]);
+        secondary.splice(indexSec, 1);
+        let indexGren = grenade.indexOf(viperCommandos[2]);
+        grenade.splice(indexGren, 1);
+    }
 }
 
 function freedomsFlameList() {
-
+    if (freedomsFlameTick.checked) {
+        console.log("adding Freedom's Flame Warbond.");
+        for (let text of freedomsFlame[0]) {
+            primary.push(text);
+        }
+        secondary.push(freedomsFlame[1]);
+    }
+    else {
+        console.log("removing Freedom's Flame Warbond.");
+        let indexPrim = primary.indexOf(freedomsFlame[0][0]);
+        primary.splice(indexPrim, 2);
+        let indexSec = secondary.indexOf(freedomsFlame[1]);
+        secondary.splice(indexSec, 1);
+    }
 }
 
 function chemicalAgentsList() {
-
+    if (chemicalAgentsTick.checked) {
+        console.log("adding Chemical Agents Warbond.");
+        for (let text of chemicalAgents[0]) {
+            stratagems.push(text);
+        }
+        secondary.push(chemicalAgents[1]);
+        grenade.push(chemicalAgents[2]);
+    }
+    else {
+        console.log("removing Chemical Agents Warbond.");
+        let indexStrat = stratagems.indexOf(chemicalAgents[0][0]);
+        stratagems.splice(indexStrat, 2);
+        let indexSec = secondary.indexOf(chemicalAgents[1]);
+        secondary.splice(indexSec, 1);
+        let indexGren = grenade.indexOf(chemicalAgents[2]);
+        grenade.splice(indexGren, 1);
+    }
 }
 
 function truthEnforcersList() {
-
+    if (truthEnforcersTick.checked) {
+        console.log("adding Truth Enforcers Warbond.");
+        for (let text of truthEnforcers[0]) {
+            primary.push(text);
+        }
+        secondary.push(truthEnforcers[1]);
+    }
+    else {
+        console.log("removing Truth Enforcers Warbond.");
+        let indexPrim = primary.indexOf(truthEnforcers[0][0]);
+        primary.splice(indexPrim, 2);
+        let indexSec = secondary.indexOf(truthEnforcers[1]);
+        secondary.splice(indexSec, 1);
+    }
 }

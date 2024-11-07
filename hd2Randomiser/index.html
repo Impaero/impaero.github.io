@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <div class="header">
+            <img src="./img/0abe10cc20cfedb109fd9cee834adc18.png" height="150px">
             <h1>General Brasch's Arsenal</h1>
             <p>General Brasch shall choose your loadout!</p>
             <p>Choice paralysis? Need a challenge through luck? We got you covered!</p>
@@ -19,6 +20,8 @@
         </div>
         <div class="warbonds">
             <h2>Select Warbonds:</h2>
+            <input type="button" id="tick-untick-all" value="Tick All" onclick="tickAll()">
+            <input type="button" id="tick-untick-all" value="Untick All" onclick="untickAll()"><br>
             <input type="checkbox" id="super-citizen" value="on">
             <label for="super-citizen"><span>Super Citizen Upgrade<span></label><br>
 
@@ -67,17 +70,26 @@
             <div id="primary-choice">
                 <p>None chosen yet</p>
             </div>
+            <div id="randomise-primary">
+                <input type="button" id="randomise-primary" value="Randomise primary" onclick="randomisePrimary()">
+            </div>
         </div>
         <div class="secondary">
             <h3>Secondary:</h3>
             <div id="secondary-choice">
                 <p>None chosen yet</p>
             </div>
+            <div id="randomise-secondary">
+                <input type="button" id="randomise-secondary" value="Randomise secondary" onclick="randomiseSecondary()">
+            </div>
         </div>
         <div class="grenade">
             <h3>Grenade:</h3>
             <div id="grenade-choice">
                 <p>None chosen yet</p>
+            </div>
+            <div id="randomise-grenade">
+                <input type="button" id="randomise-grenade" value="Randomise grenade" onclick="randomiseGrenade()">
             </div>
         </div>
     </div>

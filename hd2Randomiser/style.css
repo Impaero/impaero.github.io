@@ -44,8 +44,15 @@ body {
     width: 300px;
 }
 
-#randomise-stratagems {
+#randomise-stratagems, #randomise-primary, 
+#randomise-secondary, #randomise-grenade {
     padding: 5px;
+}
+
+#tick-untick-all {
+    font-size: 15px;
+    padding: 4px;
+    margin-bottom: 15px;
 }
 
 #stratagem-no {
@@ -92,6 +99,12 @@ p {
 
 br {
     margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
 }
 
 footer {
