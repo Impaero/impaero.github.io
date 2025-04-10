@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Xolonium Regular";
+    src: url("/home-assets/fonts/xolonium.regular.otf");
+}
+
+h1 {
+    font-family: "Xolonium Regular";
+    font-size: 40px;
+    font-weight: bold;
+    margin: 5px 10px 5px 5px
+}
+
+.h1-sub {
+    margin: 5px 10px 40px 5px;
+    font-size: 30px;
+}
+
+p {
+    padding: 10px;
+    font-family: 'Lucida Console';
+}
