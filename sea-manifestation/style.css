@@ -1,5 +1,30 @@
+/* GENERAL ELEMENTS */
 body {
-    background-color: rgb(8, 13, 29);
+    font-family: 'Lucida Console';
+    background-color: #080d1d;
+    margin: 0px;
+    padding: 0px;
     color: white;
+}
+
+
+/* ELEMENTS WITH IDS */
+#body {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#warning-button {
+    
+}
+
+/* CLASS ELEMENTS */
+.warning {
+    background-color: #252A3B;
+    padding: 25px;
+    text-align: center;
+    margin: auto;
+    width: 40%;
 }
 
