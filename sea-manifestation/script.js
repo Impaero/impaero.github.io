@@ -9,6 +9,9 @@ IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
 </div>
 `;
 
+const landingPage2 = ``;
+let landingPage2Exist = false;
+
 const body = document.querySelector("#body");
 
 body.innerHTML = landingPage1;
