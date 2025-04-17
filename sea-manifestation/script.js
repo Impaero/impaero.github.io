@@ -5,7 +5,7 @@ const landingPage1 = `
 THIS DATABASE IS ONLY FOR THE RIFT WATCH’S EYES ONLY.<br>
 IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
 </p>
-<button id="warning-button">wawa</button>
+<button id="warning-button">PROCEED</button>
 </div>
 `;
 
