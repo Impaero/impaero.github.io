@@ -5,13 +5,27 @@ const landingPage1 = `
 THIS DATABASE IS ONLY FOR THE RIFT WATCH’S EYES ONLY.<br>
 IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
 </p>
-<button id="warning-button">PROCEED</button>
+<button id="warning-button" onclick="warningReceived()">PROCEED</button>
 </div>
 `;
 
 const landingPage2 = ``;
 let landingPage2Exist = false;
 
-const body = document.querySelector("#body");
+let body = document.querySelector("#body");
 
 body.innerHTML = landingPage1;
+
+function warningReceived() {
+    showDatabase(0); 
+}
+
+function showDatabase(id) {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function () {
+        const db = JSON.parse(this.responseText);
+        body.innerHTML = db.manifestDatabase[id].description.replaceAll("\n","<br />");
+    };
+    xmlhttp.open("GET", "database.json");
+    xmlhttp.send();
+}
