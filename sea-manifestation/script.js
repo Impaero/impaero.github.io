@@ -74,6 +74,24 @@ function showDatabase(id, showcase) {
         showcase.innerHTML = `
         <div class="showcase-text"> 
             <img src="${db.manifestDatabase[id].image}" height="300px" class="center">
+            <table class="basic-info">
+                <tr>
+                    <td>CODE</td>
+                    <td>${db.manifestDatabase[id].mID}</td>
+                </tr>
+                <tr>
+                    <td>NAME</td>
+                    <td>${db.manifestDatabase[id].name}</td>
+                </tr>
+                <tr>
+                    <td>LENGTH</td>
+                    <td>${db.manifestDatabase[id].length}</td>
+                </tr>
+                <tr>
+                    <td>NOTABLE FEATUERS</td>
+                    <td>${db.manifestDatabase[id].notableFeatures}</td>
+                </tr>
+            </table>
             <p>${db.manifestDatabase[id].description.replaceAll("\n","<br />")}</p>
         </div>
         `;
