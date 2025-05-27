@@ -28,3 +28,22 @@ body {
     width: 40%;
 }
 
+.header-container {
+    padding: 10px;
+    margin: 10px 10px;
+    display: flex;
+    vertical-align: center;
+    align-items: center;
+    background-color: #252A3B;
+    flex-direction: row;
+}
+
+.rift-watch-icon {
+    padding: 10px;
+}
+
+.rift-watch-top-text {
+    padding: 0px 15px;
+}
+
+

@@ -9,12 +9,25 @@ IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
 </div>
 `;
 
-const landingPage2 = ``;
+const landingPage2 = `<div class="homepage">
+    <div class="page-header">
+        
+    </div>
+</div>`;
 let landingPage2Exist = false;
 
 let body = document.querySelector("#body");
 
 body.innerHTML = landingPage1;
+
+// sets warning page so that 
+function setWarningTrue() {
+    document.cookie = "warning=true;";
+}
+
+function checkWarningTrue() {
+
+}
 
 function warningReceived() {
     showDatabase(0); 
