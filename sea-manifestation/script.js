@@ -27,7 +27,7 @@ const landingPage2 = `
             <div class="main-body">
                 <div class="sidebar">
                     <button class="sidebar-b" onclick="sidebarFunction('wawa')">TESTING BUTTON</button>
-                    <button class="sidebar-b" onclick="sidebarFunction('B-6')">B-6: SCOPOPHOBIA</button>
+                    <button class="sidebar-b" onclick="sidebarFunction('B-7')">B-7: SCOPOPHOBIA</button>
                 </div>
                 <div class="showcase-container" id="showcase">
                     <p>testing text</p>
@@ -57,10 +57,10 @@ function warningReceived() {
 
 // Dictates what each button on the sidebar does. Typically shows the database.
 function sidebarFunction(functionName) {
-    if (functionName == "wawa") { // test function.
+    if (functionName == "wawa") { // shows E-1 Confidence. Also test function. May rename it to proper E-1.
         showDatabase(0, showcase);
     }
-    if (functionName == "B-6") {
+    if (functionName == "B-7") { // shows B-7 Scopophobia.
         showDatabase(1, showcase);
     }
 }
