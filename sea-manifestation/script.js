@@ -1,4 +1,4 @@
-// Some global variables with null in order to initialise future editing with the pages.
+// Declaring "showcase" as global so any of the functions can access it.
 let showcase = undefined;
 
 // Landing Page - Warning
@@ -13,7 +13,7 @@ IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
 </div>
 `;
 
-
+// Main Page.
 const landingPage2 = `
     <div id="main-page">
             <div class="header-container">
@@ -34,8 +34,8 @@ const landingPage2 = `
         </div>
     </div>`;
 
+// Set landing page to warning.
 let body = document.querySelector("#body");
-
 body.innerHTML = landingPage1;
 
 // sets warning page so that the user does not need to click on it everytime they refresh the page.
@@ -54,18 +54,28 @@ function warningReceived() {
     // return true;
 }
 
+// Dictates what each button on the sidebar does. Typically shows the database.
 function sidebarFunction(functionName) {
-    if (functionName == "wawa") {
+    if (functionName == "wawa") { // test function.
         showDatabase(0, showcase);
     }
 }
 
+// Show information about certain rifts. Currently only Charybdis for now.
+function showRiftInfo(riftName) {
+
+}
+
+// Show database content.
 function showDatabase(id, showcase) {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
         const db = JSON.parse(this.responseText);
         showcase.innerHTML = `
-        <p>${db.manifestDatabase[id].description.replaceAll("\n","<br />")}</p>
+        <div class="showcase-text"> 
+            <img src="${db.manifestDatabase[id].image}" height="300px" class="center">
+            <p>${db.manifestDatabase[id].description.replaceAll("\n","<br />")}</p>
+        </div>
         `;
     };
     xmlhttp.open("GET", "database.json");
