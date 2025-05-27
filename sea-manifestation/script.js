@@ -27,6 +27,7 @@ const landingPage2 = `
             <div class="main-body">
                 <div class="sidebar">
                     <button class="sidebar-b" onclick="sidebarFunction('wawa')">TESTING BUTTON</button>
+                    <button class="sidebar-b" onclick="sidebarFunction('B-6')">B-6: SCOPOPHOBIA</button>
                 </div>
                 <div class="showcase-container" id="showcase">
                     <p>testing text</p>
@@ -59,6 +60,9 @@ function sidebarFunction(functionName) {
     if (functionName == "wawa") { // test function.
         showDatabase(0, showcase);
     }
+    if (functionName == "B-6") {
+        showDatabase(1, showcase);
+    }
 }
 
 // Show information about certain rifts. Currently only Charybdis for now.
@@ -88,7 +92,7 @@ function showDatabase(id, showcase) {
                     <td>${db.manifestDatabase[id].length}</td>
                 </tr>
                 <tr>
-                    <td>NOTABLE FEATUERS</td>
+                    <td>NOTABLE FEATURES</td>
                     <td>${db.manifestDatabase[id].notableFeatures}</td>
                 </tr>
             </table>
