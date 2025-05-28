@@ -1,9 +1,17 @@
 // Declaring "showcase" as global so any of the functions can access it.
 let showcase = undefined;
+let br1 = undefined;
+let b1 = undefined;
+let b2 = undefined;
+let b3 = undefined;
+let b4 = undefined;
+let b5 = undefined;
+let b6 = undefined;
+let b7 = undefined;
 
 // Landing Page - Warning
 const landingPage1 = `
-<div class="warning">
+<div class="warning crt-fg">
 <img src="../home-assets/images/dragon-solid-white.png" height="50px" width="60px">
 <p>
 THIS DATABASE IS ONLY FOR THE RIFT WATCH’S EYES ONLY.<br>
@@ -16,7 +24,7 @@ IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
 // Main Page.
 const landingPage2 = `
     <div id="main-page">
-            <div class="header-container">
+            <div class="header-container crt-fg">
                 <div class="rift-watch-icon">
                     <img src="../home-assets/images/dragon-solid-white.png" height="60px" width="60px" float="left">   
                 </div>
@@ -25,43 +33,74 @@ const landingPage2 = `
                 </div>
             </div>
             <div class="main-body">
-                <div class="sidebar">
-                    <button class="sidebar-b" onclick="sidebarFunction('wawa')">TESTING BUTTON</button>
-                    <button class="sidebar-b" onclick="sidebarFunction('B-7')">B-7: SCOPOPHOBIA</button>
+                <div class="sidebar crt-fg">
+                    <button class="sidebar-b" id="br1" onlcick=sidebarFunction('C-621')">C-621: THE CHARYBDIS RIFT</button>
+                    <button class="sidebar-b" id="b1" onclick="sidebarFunction('C-E-01')">C-E-01: CONFIDENCE</button>
+                    <button class="sidebar-b" id="b2" onclick="sidebarFunction('C-M-05')">C-M-05: LIVING WHALEFALL</button>
+                    <button class="sidebar-b" id="b3" onclick="sidebarFunction('C-B-07')">C-B-07: SCOPOPHOBIA</button>
+                    <button class="sidebar-b" id="b4" onclick="sidebarFunction('C-B-08')">C-B-08: IMPULSITIVITY</button>
+                    <button class="sidebar-b" id="b5" onclick="sidebarFunction('C-M-18')">C-M-18: HERD MENTALITY</button>
+                    <button class="sidebar-b" id="b6" onclick="sidebarFunction('C-E-21')">C-E-21: CALM</button>
+                    <button class="sidebar-b" id="b7" onclick="sidebarFunction('C-A-00')">C-A-00: THE LEVIATHAN</button>
                 </div>
-                <div class="showcase-container" id="showcase">
-                    <p>testing text</p>
+                <div class="showcase-container crt-fg" id="showcase">
+                    <h1></h1>
                 </div>
         </div>
     </div>`;
 
 // Set landing page to warning.
 let body = document.querySelector("#body");
-body.innerHTML = landingPage1;
 
 // sets warning page so that the user does not need to click on it everytime they refresh the page.
 function setWarningTrue() {
-    document.cookie = "warning=true;";
+    document.cookie = "warning=true";
 }
 
 function checkWarningTrue() {
-
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split('=');
+    if (ca[1] == "true") {
+        showMainPage();
+    }
+    else {
+        body.innerHTML = landingPage1;
+    }
 }
 
 // swap from warning page to main page
 function warningReceived() {
+    showMainPage();
+    setWarningTrue();
+}
+
+function showMainPage() {
     body.innerHTML = landingPage2;
-    showcase = document.querySelector("#showcase");
-    // return true;
+    showcase = document.querySelector("#showcase"); // allows showcase to be modified.
+    // allow buttons to be modified (in order for the buttons to be "disabled" upon
+    // showing the respective database.
+    br1 = document.querySelector("br1");
+    b1 = document.querySelector("#b1");
+    b2 = document.querySelector("#b2");
+    b3 = document.querySelector("#b3");
+    b4 = document.querySelector("#b4");
+    b5 = document.querySelector("#b5");
+    b6 = document.querySelector("#b6");
+    b7 = document.querySelector("#b7");
 }
 
 // Dictates what each button on the sidebar does. Typically shows the database.
 function sidebarFunction(functionName) {
-    if (functionName == "wawa") { // shows E-1 Confidence. Also test function. May rename it to proper E-1.
-        showDatabase(0, showcase);
-    }
-    if (functionName == "B-7") { // shows B-7 Scopophobia.
-        showDatabase(1, showcase);
+    switch (functionName) {
+        case "C-E-01":
+            showDatabase(0, showcase);
+            break;
+        case "C-M-05":
+            showDatabase(1, showcase);
+            break;
+        case "C-B-07":
+            showDatabase(2, showcase);
+            break;
     }
 }
 
@@ -103,3 +142,6 @@ function showDatabase(id, showcase) {
     xmlhttp.open("GET", "database.json");
     xmlhttp.send();
 }
+
+
+checkWarningTrue();

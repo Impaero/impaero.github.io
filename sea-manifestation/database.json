@@ -1,23 +1,37 @@
 {
     "orgName": "Rift Watch",
+    "riftDatabase": {
+        "id": 0,
+        "rID": "C-621",
+        "image": "images/test.png"
+    },
     "manifestDatabase" : [
         {
             "id": 0,
-            "mID": "E-1",
+            "mID": "C-E-01",
             "name": "Confidence",
             "image": "images/confidence.png",
             "length": "25 meters",
             "notableFeatures": "Bold red scales, reflective crown",
-            "description": "A marlin that has bright, red scales, seemingly unbothered by the fact that it does not care about how visible it is within the open waters. Its aggressiveness must not be underestimated, seeing as it can drive away even the most dangerous of manifestations within the rift’s epipelagic zone.\n\nWe thought that its visibility might affect its survivability, but it seems that it does not care about such things. Even our █████████ was not able to acquire even the tiniest of its flesh due to it being able to swim away confidently."
+            "description": "A marlin that has bright, red scales, seemingly unbothered by the fact that it does not care about how visible it is within the open waters. C-E-01's aggressiveness must not be underestimated, seeing as it can drive away even the most dangerous of manifestations within the rift’s epipelagic zone.\n\nWe thought that its visibility might affect its survivability, but it seems that it does not care about such things. Even our █████████ was not able to acquire even the tiniest of its flesh due to it being able to swim away confidently."
         },
         {
             "id": 1,
-            "mID": "B-7",
+            "mID": "C-M-05",
+            "name": "Living Whalefall",
+            "image": "images/test.png",
+            "length": "60 meters",
+            "notableFeatures": "An ecosystem growing out of the manifestation, other manifestations feeding off its chunks",
+            "description": "TBD"
+        },
+        {
+            "id": 2,
+            "mID": "C-B-07",
             "name": "Scopophobia",
             "image": "images/scopophobia.png",
             "length": "10 meters",
             "notableFeatures": "Numerous cameras on its head",
-            "description": "Due to B-7's altered form, we cannot precisely surmise what exactly its base fauna is. Some say it is an eel, others say it is an elongated shark, but the closest guess we have is a telescope fish. The reason being, other than its form, is that the cameras it has as its eyes seem to unsettle those who are near B-7.\n\nThus, the assigned name \"Scopophobia\" fits well with its unnerving eyes. It roams around, cameras focused on movement or presences around the rift's bathypelagic zone. Several of the agents we have sent in various ██████████s that did encounter B-7 in some form have unnatural psychosis - some say they have seen █████, others felt ████████, but one thing is common amongst everyone affected.\n\nBeing watched."
+            "description": "Due to C-B-07's altered form, we cannot precisely surmise what exactly its base fauna is. Some say it is an eel, others say it is an elongated shark, but the closest guess we have is a telescope fish. The reason being, other than its form, is that the cameras it has as its eyes seem to unsettle those who are near C-B-07.\n\nThus, the assigned name \"Scopophobia\" fits well with its unnerving eyes. It roams around, cameras focused on movement or presences around the rift's bathypelagic zone. Several of the agents we have sent in various ██████████s that did encounter C-B-07 in some form have unnatural psychosis - some say they have seen █████, others felt ████████, but one thing is common amongst everyone affected.\n\nBeing watched."
         }
     ]
 }

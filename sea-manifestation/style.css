@@ -19,7 +19,17 @@ body {
 }
 
 #warning-button {
-    
+    font-family: 'Lucida Console';
+    font-size: 15px;
+    padding: 15px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    transition: 0.6s;
+}
+
+#warning-button:hover {
+    background-color: #69517d;
 }
 
 /* CLASS ELEMENTS */
@@ -59,8 +69,20 @@ body {
     overflow: auto;
 }
 
-.sidebar button {
+.sidebar-b {
     display: block;
+    text-align: left;
+    margin: 0px auto 10px auto;
+    padding: 20px 0px 20px 15px;
+    border: 2px solid transparent;
+    background-color: #585764;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+}
+
+.sidebar-b:hover {
+    background-color: #4b7f9b;
 }
 
 .showcase-container {
@@ -118,4 +140,34 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+button { /* for buttons  */
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+/* AESTHETICS */
+.crt-bg {
+    background: linear-gradient(to top, #080d1d, #080d1d, #161822, #161822);
+    background-size: cover;
+    background-size: 90% 10px;
+    animation: scanlines infinite 10s linear;
+}
+
+.crt-fg {
+    background: linear-gradient(to top, #252A3B, #252A3B, #30364b, #30364b);
+    background-size: cover;
+    background-size: 90% 10px;
+    animation: scanlines infinite 10s linear;
+    text-shadow: 0 0 5px white;
+}
+
+@keyframes scanlines {
+    from {
+        background-position: 0 0; 
+    }
+    to {
+        background-position: 0 -100px;
+    }
 }
