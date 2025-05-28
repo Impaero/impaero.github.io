@@ -70,13 +70,15 @@ body {
 }
 
 .sidebar-b {
+    font-family: 'Lucida Console';
     display: block;
     text-align: left;
     margin: 0px auto 10px auto;
     padding: 20px 0px 20px 15px;
     border: 2px solid transparent;
-    background-color: #585764;
+    background-color: #5b5772;
     color: white;
+    text-shadow: 0 0 5px rgb(157, 157, 157);
     font-size: 15px;
     width: 100%;
 }
@@ -96,7 +98,8 @@ body {
 
 .showcase-text {
     display: block;
-    padding: 25px;
+    position: relative;
+    padding: 0px 25px;
 }
 
 .rift-watch-icon {
@@ -125,13 +128,13 @@ body {
 .basic-info td:first-child {
     font-weight: bold;
     text-align: left;
-    padding-left: 5px;
-    width: 50px;
+    padding-left: 25px;
+    width: 75px;
 }
 
 .basic-info td {
     text-align: right;
-    padding: 5px 0px;
+    padding: 10px 0px 10px 15px;
     width: 100px;
 }
 
@@ -147,6 +150,20 @@ button { /* for buttons  */
     cursor: pointer;
 }
 
+.middle { /* for centering texts */
+    text-align: center;
+}
+
+.topleft { /*for texts that persist in the top left corner. */
+    position: absolute;
+    top: 0px;
+    left: 25px;
+}
+
+strong {
+    text-decoration: underline;
+}
+
 /* AESTHETICS */
 .crt-bg {
     background: linear-gradient(to top, #080d1d, #080d1d, #161822, #161822);
@@ -160,7 +177,7 @@ button { /* for buttons  */
     background-size: cover;
     background-size: 90% 10px;
     animation: scanlines infinite 10s linear;
-    text-shadow: 0 0 5px white;
+    text-shadow: 0 0 5px rgb(157, 157, 157);
 }
 
 @keyframes scanlines {

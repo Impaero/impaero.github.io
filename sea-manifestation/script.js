@@ -34,7 +34,7 @@ const landingPage2 = `
             </div>
             <div class="main-body">
                 <div class="sidebar crt-fg">
-                    <button class="sidebar-b" id="br1" onlcick=sidebarFunction('C-621')">C-621: THE CHARYBDIS RIFT</button>
+                    <button class="sidebar-b" id="br1" onclick="sidebarFunction('C-621')">C-621: THE CHARYBDIS RIFT</button>
                     <button class="sidebar-b" id="b1" onclick="sidebarFunction('C-E-01')">C-E-01: CONFIDENCE</button>
                     <button class="sidebar-b" id="b2" onclick="sidebarFunction('C-M-05')">C-M-05: LIVING WHALEFALL</button>
                     <button class="sidebar-b" id="b3" onclick="sidebarFunction('C-B-07')">C-B-07: SCOPOPHOBIA</button>
@@ -44,7 +44,9 @@ const landingPage2 = `
                     <button class="sidebar-b" id="b7" onclick="sidebarFunction('C-A-00')">C-A-00: THE LEVIATHAN</button>
                 </div>
                 <div class="showcase-container crt-fg" id="showcase">
-                    <h1></h1>
+                    <div class="showcase-text middle">
+                        <h1>PLEASE SELECT AN ENTRY TO SHOW.</h1>
+                    </div>
                 </div>
         </div>
     </div>`;
@@ -92,6 +94,9 @@ function showMainPage() {
 // Dictates what each button on the sidebar does. Typically shows the database.
 function sidebarFunction(functionName) {
     switch (functionName) {
+        case "C-621":
+            showRiftInfo(0, showcase);
+            break;
         case "C-E-01":
             showDatabase(0, showcase);
             break;
@@ -101,12 +106,38 @@ function sidebarFunction(functionName) {
         case "C-B-07":
             showDatabase(2, showcase);
             break;
+        case "C-B-08":
+            showDatabase(3, showcase);
+            break;
+        case "C-M-18":
+            showDatabase(4, showcase);
+            break;
+        case "C-E-21":
+            showDatabase(5, showcase);
+            break;
+        case "C-A-00":
+            showDatabase(6, showcase);
+            break;
     }
 }
 
 // Show information about certain rifts. Currently only Charybdis for now.
-function showRiftInfo(riftName) {
-
+function showRiftInfo(id, showcase) {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function () {
+        const db = JSON.parse(this.responseText);
+        showcase.innerHTML = `
+        <div class="showcase-text"> 
+            <h1>RIFT</h1>
+            <img src="${db.riftDatabase[id].image}" height="300px" class="center">
+            <h2>CODE: ${db.riftDatabase[id].rID}</h2>
+            <h2>NAME: ${db.riftDatabase[id].name}</h2>
+            <p>${db.riftDatabase[id].description.replaceAll("\n","<br />")}</p>
+        </div>
+        `;
+    };
+    xmlhttp.open("GET", "database.json");
+    xmlhttp.send();
 }
 
 // Show database content.
@@ -116,6 +147,7 @@ function showDatabase(id, showcase) {
         const db = JSON.parse(this.responseText);
         showcase.innerHTML = `
         <div class="showcase-text"> 
+            <h1>MANIFESTATION</h1>
             <img src="${db.manifestDatabase[id].image}" height="300px" class="center">
             <table class="basic-info">
                 <tr>
@@ -129,6 +161,10 @@ function showDatabase(id, showcase) {
                 <tr>
                     <td>LENGTH</td>
                     <td>${db.manifestDatabase[id].length}</td>
+                </tr>
+                <tr>
+                    <td>LAYER</td>
+                    <td>${db.manifestDatabase[id].layer}</td>
                 </tr>
                 <tr>
                     <td>NOTABLE FEATURES</td>
