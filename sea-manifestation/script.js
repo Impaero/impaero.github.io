@@ -38,7 +38,7 @@ const landingPage2 = `
                     <button class="sidebar-b" id="b1" onclick="sidebarFunction('C-E-01')">C-E-01: CONFIDENCE</button>
                     <button class="sidebar-b" id="b2" onclick="sidebarFunction('C-M-05')">C-M-05: LIVING WHALEFALL</button>
                     <button class="sidebar-b" id="b3" onclick="sidebarFunction('C-B-07')">C-B-07: SCOPOPHOBIA</button>
-                    <button class="sidebar-b" id="b4" onclick="sidebarFunction('C-B-08')">C-B-08: IMPULSITIVITY</button>
+                    <button class="sidebar-b" id="b4" onclick="sidebarFunction('C-B-08')">C-B-08: IMPULSIVITY</button>
                     <button class="sidebar-b" id="b5" onclick="sidebarFunction('C-M-18')">C-M-18: HERD MENTALITY</button>
                     <button class="sidebar-b" id="b6" onclick="sidebarFunction('C-E-21')">C-E-21: CALM</button>
                     <button class="sidebar-b" id="b7" onclick="sidebarFunction('C-A-00')">C-A-00: THE LEVIATHAN</button>

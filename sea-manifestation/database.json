@@ -45,12 +45,12 @@
         {
             "id": 3,
             "mID": "C-B-08",
-            "name": "Impulsitivity",
+            "name": "Impulsivity",
             "image": "images/impulsitivity.png",
             "length": "17.5 meters",
             "layer": "Bathypelagic Zone",
             "notableFeatures": "Protruding spines emitting electric sparks, two triple-pronged 'horns'",
-            "description": "TBD"
+            "description": "Electricity flows throughout the manifestation’s spines and elongated body. Closer inspection of a C-B-08 specimen suggests that it is the rift’s altered version of an electric eel. \n\nUpon ███████████-928’s first encounter with a group of C-B-08, the personnel stated that they felt a sense of doing actions that would have been detrimental to the mission. Usually, these urges are easily controlled, however, with C-B-08’s electric currents, it was near impossible to resist the urges.\n\n███████████-928 did not make it out in one piece. We were only able to recover its records once ███████████-955 and its captain, high clearance personnel █████████████, descended and resisted the voltaic arcs C-B-08 releases."
         },
         {
             "id": 4,
@@ -60,7 +60,7 @@
             "length": "0.3 meters",
             "layer": "Mesopelagic Zone",
             "notableFeatures": "Clear body, even showing the manifestation's brain",
-            "description": "TBD"
+            "description": "These manifestations are found in massive schools, and only in massive schools - those we catch and separate from a school almost immediately die upon separation. We are not able to get an alive isolated specimen, and we will need to have a massive containment unit for even a small sample of alive C-M-18. No █████████ are massive enough to do so.\n\nUpon close and constant monitoring of C-M-18 schools, they do not have a leader, and are simply acting upon how the other C-M-18 act. As soon as one turns, all the others turn within a quarter of a second.\n\nIt seems that C-M-18 depends on other C-M-18s being in close proximity, both in where they are headed, and in existing."
         },
         {
             "id": 5,
@@ -70,7 +70,7 @@
             "length": "0.15 meters",
             "layer": "Epipelagic Zone",
             "notableFeatures": "Aura emitting a sense of calm; normal appearance otherwise",
-            "description": "TBD"
+            "description": "A peaceful manifestation floating about, C-E-21 emits an aura of serenity, turning down any aggression levels on fauna and manifestations around it. It has small, yet strong bioluminescence, allowing it to illuminate the surrounding environment. The calming aura seems to work on most manifestations within its layer.\n\nDue to its bioluminescence, it can be visible from far away, especially during night time. However, upon constant monitoring of one C-E-21, none of the local manifestations attack it, causing it to populate the epipelagic zone.\n\nUsing these specimens for calming one’s mind from psychological pressure seems to have no side effect, and thus is used for such."
         },
         {
             "id": 6,
