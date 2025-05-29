@@ -129,7 +129,7 @@ function showRiftInfo(id, showcase) {
         showcase.innerHTML = `
         <div class="showcase-text"> 
             <h1>RIFT</h1>
-            <img src="${db.riftDatabase[id].image}" height="300px" class="center">
+            <img src="${db.riftDatabase[id].image}" height="400px" class="center">
             <h2>CODE: ${db.riftDatabase[id].rID}</h2>
             <h2>NAME: ${db.riftDatabase[id].name}</h2>
             <h2>GENERAL LOCATION: ${db.riftDatabase[id].location}</h2>
