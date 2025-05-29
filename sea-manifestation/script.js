@@ -12,7 +12,7 @@ let b7 = undefined;
 // Landing Page - Warning
 const landingPage1 = `
 <div class="warning crt-fg">
-<img src="../home-assets/images/dragon-solid-white.png" height="50px" width="60px">
+<img src="images/rw-logo.png" height="50px" width="50px">
 <p>
 THIS DATABASE IS ONLY FOR THE RIFT WATCH’S EYES ONLY.<br>
 IF UNAUTHORISED, TURN BACK. ONLY INSANITY AWAITS ON YOU.
@@ -26,7 +26,7 @@ const landingPage2 = `
     <div id="main-page">
             <div class="header-container crt-fg">
                 <div class="rift-watch-icon">
-                    <img src="../home-assets/images/dragon-solid-white.png" height="60px" width="60px" float="left">   
+                    <img src="images/rw-logo.png" height="60px" width="60px" float="left">   
                 </div>
                 <div class="rift-watch-top-text">
                     <h1>RIFT WATCH DATABASE</h1>
@@ -132,6 +132,8 @@ function showRiftInfo(id, showcase) {
             <img src="${db.riftDatabase[id].image}" height="300px" class="center">
             <h2>CODE: ${db.riftDatabase[id].rID}</h2>
             <h2>NAME: ${db.riftDatabase[id].name}</h2>
+            <h2>GENERAL LOCATION: ${db.riftDatabase[id].location}</h2>
+            <h2>THREAT LEVEL: ${db.riftDatabase[id].threat}</h2>
             <p>${db.riftDatabase[id].description.replaceAll("\n","<br />")}</p>
         </div>
         `;
@@ -148,7 +150,7 @@ function showDatabase(id, showcase) {
         showcase.innerHTML = `
         <div class="showcase-text"> 
             <h1>MANIFESTATION</h1>
-            <img src="${db.manifestDatabase[id].image}" height="300px" class="center">
+            <img src="${db.manifestDatabase[id].image}" height="400px" class="center">
             <table class="basic-info">
                 <tr>
                     <td>CODE</td>

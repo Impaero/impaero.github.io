@@ -6,7 +6,9 @@
         "rID": "C-621",
         "name": "The Charybdis Rift",
         "image": "images/charybdis rift.png",
-        "description": "TBD"
+        "location": "Bermuda Triangle",
+        "threat": "MAXIMUM | REQUIRES CONSTANT WATCH",
+        "description": "Aptly named after the famous Greek mythological monster, the Charybdis Rift is one of the most powerful rifts we have encountered on our planet. Not only is it enhanced by humanity’s perception of its location, Bermuda Triangle, it is also large enough to siphon thoughts from ships passing by. This creates the form we know today - a maelstrom that leads those unprepared to their doom, causing their thoughts to be consumed by the rift.\n\nIt consists of four different layers - similar to how oceans are. The deeper you go, the more dangerous it gets, as the rift’s waters themselves apply oceanic pressure to the psyche of the personnel, as well as the manifestations getting deadlier.\n\nThe four layers are the epipelagic zone, mesopelagic zone, bathypelagic zone, and abyssopelagic zone. According to our gathered data, epipelagic zone relates to surface level thoughts and character traits, mesopelagic zone relates to the preconscious, memories, and meaningful behaviours, and bathypelagic zone relates to mental trauma and instinctual behaviours. We do not have much data regarding the abyssopelagic zone, other than the Leviathan’s presence, and its tendency to █████████████."
         }
     ],
     "manifestDatabase" : [
@@ -28,7 +30,7 @@
             "length": "60 meters",
             "layer": "Mesopelagic Zone",
             "notableFeatures": "An ecosystem growing out of the manifestation, other manifestations feeding off its chunks",
-            "description": "TBD"
+            "description": "C-M-05, despite missing chunks of its flesh that would normally kill a normal marine fauna, still moves about, going about its day. Upon constant monitoring of C-M-05, its flesh constantly regenerates, however, there are certain microorganisms and macroorganisms that seem to take advantage of this, feeding on it.\n\nIt does not seem to mind those feeding on it. In fact, some researchers speculate that it is happy that it is ‘taking care’ of the organisms in a way, to the point where it allows an actual marine ecosystem, complete with marine flora to flourish. \n\nDue to the resources on its body, as well as flora growing, both herbivores and carnivores are able to coexist with minimal deaths."
         },
         {
             "id": 2,
