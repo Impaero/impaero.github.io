@@ -1,0 +1,190 @@
+/* GENERAL ELEMENTS */
+body {
+    font-family: 'Lucida Console';
+    background-color: #080d1d;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+
+/* ELEMENTS WITH IDS */
+#body {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+#warning-button {
+    font-family: 'Lucida Console';
+    font-size: 15px;
+    padding: 15px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    transition: 0.6s;
+}
+
+#warning-button:hover {
+    background-color: #69517d;
+}
+
+/* CLASS ELEMENTS */
+.warning {
+    background-color: #252A3B;
+    padding: 25px;
+    text-align: center;
+    margin: auto;
+    width: 40%;
+}
+
+.header-container {
+    margin-top: 10px;
+    padding: 5px 0px;
+    display: flex;
+    align-self: center;
+    width: 92vw;
+    vertical-align: center;
+    align-items: center;
+    background-color: #252A3B;
+    flex-direction: row;
+}
+
+.main-body {
+    align-self: flex-end;
+    margin: auto;
+    margin-top: 15px;
+    height: 80vh;
+    width: 92vw;
+}
+
+.sidebar {
+    display: inline-block;
+    background-color: #252A3B;
+    width: 25%;
+    height: inherit;
+    overflow: auto;
+}
+
+.sidebar-b {
+    font-family: 'Lucida Console';
+    display: block;
+    text-align: left;
+    margin: 0px auto 10px auto;
+    padding: 20px 0px 20px 15px;
+    border: 2px solid transparent;
+    background-color: #5b5772;
+    color: white;
+    text-shadow: 0 0 5px rgb(157, 157, 157);
+    font-size: 15px;
+    width: 100%;
+}
+
+.sidebar-b:hover {
+    background-color: #4b7f9b;
+}
+
+.showcase-container {
+    float: right;
+    width: 72.5%;
+    max-width: 72.5%;
+    background-color: #252A3B;
+    overflow: auto;
+    height: inherit;
+}
+
+.showcase-text {
+    display: block;
+    position: relative;
+    padding: 0px 25px;
+}
+
+.rift-watch-icon {
+    padding: 10px 10px 10px 30px;
+}
+
+.rift-watch-top-text {
+    font-weight: bold;
+    padding: 0px 15px;
+}
+
+.basic-info {
+    margin: 20px 0px;
+    width: 40%;
+    border: none;
+}
+
+.basic-info th, td {
+    border: none;
+}
+
+.basic-info tr:hover {
+    background-color: #344853;
+}
+
+.basic-info td:first-child {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 25px;
+    width: 75px;
+}
+
+.basic-info td {
+    text-align: right;
+    padding: 10px 5px 10px 15px;
+    width: 100px;
+}
+
+/* COMMON CLASSES FOR STYLISING */
+.center { /* for images */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button { /* for buttons  */
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.middle { /* for centering texts */
+    text-align: center;
+}
+
+.topleft { /*for texts that persist in the top left corner. */
+    position: absolute;
+    top: 0px;
+    left: 25px;
+}
+
+strong {
+    text-decoration: underline;
+}
+
+/* AESTHETICS */
+.crt-bg {
+    background: linear-gradient(to top, #080d1d, #080d1d, #161822, #161822);
+    background-size: cover;
+    background-size: 90% 10px;
+    animation: scanlines infinite 10s linear;
+}
+
+.crt-fg {
+    background: linear-gradient(to top, #252A3B, #252A3B, #30364b, #30364b);
+    background-size: cover;
+    background-size: 90% 10px;
+    animation: scanlines infinite 10s linear;
+    text-shadow: 0 0 5px rgb(157, 157, 157);
+}
+
+@keyframes scanlines {
+    from {
+        background-position: 0 0; 
+    }
+    to {
+        background-position: 0 -100px;
+    }
+}
